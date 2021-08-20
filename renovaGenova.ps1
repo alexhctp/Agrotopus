@@ -1,5 +1,6 @@
 $getString_b1 = (netstat -anop TCP | findstr 20256)
 $getString_b2 = (netstat -anop TCP | findstr 20257)
+
 foreach($z1 in $getString_b1.Substring($getString_b1.Length-5)) {
     taskkill.exe /pid $z1 /F
     Start-Sleep -s 0.8
